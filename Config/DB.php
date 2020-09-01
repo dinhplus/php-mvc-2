@@ -1,24 +1,29 @@
 <?php
 class DB
-{   public static $dbname = "mvc_php";
+{
     private static $conn = null;
     public function __construct()
     {
-        $testDB = static::getConnection()->prepare("use ".self::$dbname);
-        if(!$testDB->execute()){
-            echo "connect failed!";
-        }else{
-            echo(`
-                <script> console.log("connect completed");
-                </script>
-            `);
-        }
+
     }
     public static function getConnection()
+    {  try {
+            $dbname = "mvc_php";
+            $hostname = "localhost";
+            $user = "root";
+            $password = '';
+            if (is_null(self::$conn)) {
+                self::$conn = new PDO("mysql:host=$hostname;dbname=$dbname", $user, $password);
+                self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            }
+            return self::$conn;
+    } catch (PDOException $e) {
+        die("Connect database false: $e ");
+    }
+
+    }
+    public function __destruct()
     {
-        if (is_null(self::$conn)) {
-            self::$conn = new PDO("mysql:host=localhost;dbname=mvc_php", 'root', '');
-        }
-        return self::$conn;
+        self::$conn=null;
     }
 }

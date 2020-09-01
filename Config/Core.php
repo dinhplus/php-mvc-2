@@ -1,5 +1,5 @@
 <?php
-
+require_once("Core/preload.php");
 require_once("Config/DB.php");
 require_once("Core/Controller.php");
 require_once("Core/Model.php");

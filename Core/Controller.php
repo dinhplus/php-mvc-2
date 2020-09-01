@@ -22,12 +22,12 @@ class BaseController
     {
         extract($this->vars);
         ob_start();
-        require(ROOT . "Views/" . ucfirst(str_replace('Controller', '', get_class($this))) . '/' . $filename . '.php');
+        require_once(ROOT . "Views/" . ucfirst(str_replace('Controller', '', get_class($this))) . '/' . $filename . '.php');
         $content_for_layout = ob_get_clean();
         if ($this->layout == false) {
             $content_for_layout;
         } else {
-            require(ROOT . "Views/Layouts/" . $this->layout . '.php');
+            require_once(ROOT . "Views/Layouts/" . $this->layout . '.php');
         }
     }
 

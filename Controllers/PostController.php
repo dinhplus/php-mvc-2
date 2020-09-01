@@ -2,9 +2,9 @@
 use Controller\BaseController as Controller;
 class PostController extends Controller{
     public function __construct() {
-        //Contructor
+        $this->layout = "defaultAplication";
     }
     public function index(){
-        echo "this is post controller";
+        $this->render("index");
     }
 }
