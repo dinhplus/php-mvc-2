@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplication</title>
-    <link rel="stylesheet" href="./public/assets/bootstrap/css/bootstrap.min.css">
+    <title>Error!</title>
+    <link rel="stylesheet" href="/public/assets/bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Admin Aplication</a>
+        <a class="navbar-brand" href="#">PHP Aplication</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="/acount">Acount</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard">Management</a>
+                    <a class="nav-link" href="/contact">Contact</a>
                 </li>
 
             </ul>
@@ -44,11 +44,12 @@
             <?php
             echo $content_for_layout;
             ?>
-
+            <img src="/public/images/Screenshot from 2020-10-29 23-15-30.png" alt="" srcset="">
         </div>
 
     </main>
-    <script src="public/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/public/assets/bootstrap/Jquery/jquery-3.2.1.slim.min.js" ></script>
+    <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

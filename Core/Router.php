@@ -75,12 +75,13 @@ class Router{
         $request = new Request;
         static::parse($request);
         foreach (self::$routerList as $url=>$callback) {
-            if(!in_array($request->url,array_keys(self::$routerList))){
+            if (strpos($request->url, "/public") === 0) {
+                echo "hehehe";
+                static::loadPublicFile($request->url);
+            } else if (!in_array($request->url,array_keys(self::$routerList))){
                 static::loadController(array("callback"=>"ErrorController@notFound","method"=>"GET"));
             }
-            if (strpos($request->url, "/public") === 0) {
-            static::loadPublicFile($request->url);
-            } else if($request->url===$url){
+            else if($request->url===$url){
 
                 static::loadController($callback,$request->params);
             }
@@ -92,6 +93,6 @@ class Router{
 }
 
 
-require_once("Routers/api.php");
-require_once("Routers/web.php");
+require_once(ROOT."Routers/api.php");
+require_once(ROOT."Routers/web.php");
 Router::route();
