@@ -12,10 +12,11 @@
 # Install & Run
     1. Clone or Download this project from this repo
     2. Create table template (mySQL) use "migrate.sql" at "./Config/migrate.sql"
-    3. Run command line (terminal) script " php --server 127.0.0.1:{port} index.php"
+    3. Run command line (terminal) script " php -S {host}:{port} {ROOT_directory}"
+        * exam: ROOT_directory = "WEBROOT"
         * notice: 80 is default of {port}, XAMPP or skype will run on it
     4. url example: http://127.0.0.1:8080/posts
 # Isue
-    The routing looks neat and beautiful, but it is not well secured, the routing is not flexible when expanding features. I will try to create a router like laravel for more convenience in the next version.
+    
 # Document:
     Read document.md to learn how to use it.
