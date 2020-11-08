@@ -33,5 +33,6 @@ jobs:
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
 
-    # - name: Run test suite
+    - name: Run test suite
     #   run: composer run-script test
+        run: php -S 127.0.0.1:8080 -t WEBROOT
