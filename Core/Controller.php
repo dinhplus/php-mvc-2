@@ -16,7 +16,6 @@ class BaseController
     function set($data)
     {
         $this->vars = array_merge($this->vars, $data);
-        // $GLOBALS = array_merge($GLOBALS,$this->vars);
     }
 
     function render($filename)

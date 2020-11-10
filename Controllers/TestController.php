@@ -5,7 +5,7 @@ class TestController extends Controller{
         $this->layout = "defaultAplication";
     }
     public function index(){
-        // $this->render("index");
+
         if($_GET["name"]&&$_GET["name"]!=""){
             $data["name"] = $_GET["name"];
         }
