@@ -10,6 +10,7 @@ Router::GET("/posts/callback",function(){
 });
 Router::GET("/home","HomeController@index");
 Router::GET("/posts","PostController@index");
+Router::GET("/test","TestController@index");
 
 // // Router::GET("/posts/detail/$id","PostController@show");
 // Router::GET("/posts/create","PostController@create");

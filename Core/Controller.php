@@ -11,18 +11,20 @@ class BaseController
     //BaseController Statement
 
     var $vars = [];
-    var $layout = "application";
+    var $layout = "defaultAplication";
 
     function set($data)
     {
         $this->vars = array_merge($this->vars, $data);
+        // $GLOBALS = array_merge($GLOBALS,$this->vars);
     }
 
     function render($filename)
     {
+
         extract($this->vars);
         ob_start();
-        require_once(ROOT . "Views/" . ucfirst(str_replace('Controller', '', get_class($this))) . '/' . $filename . '.php');
+        include_once(ROOT . "Views/" . ucfirst(str_replace('Controller', '', get_class($this))) . '/' . $filename . '.php');
         $content_for_layout = ob_get_clean();
         if ($this->layout == false) {
             $content_for_layout;

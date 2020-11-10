@@ -44,7 +44,7 @@
             <?php
             echo $content_for_layout;
             ?>
-            <img src="/public/images/Screenshot from 2020-10-29 23-15-30.png" alt="" srcset="">
+            <img src="/public/images/Luffy_Wax.png" alt="" srcset="">
         </div>
 
     </main>
